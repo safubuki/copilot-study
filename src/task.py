@@ -21,7 +21,7 @@ class TaskManager:
                 print(f"{idx}. {task}")
 
     def delete_task(self, task_number):
-        if 0 < task_number <= len(self.tasks):
+        if task_number > 0 and task_number <= len(self.tasks):
             removed_task = self.tasks.pop(task_number - 1)
             self.storage.save_tasks(self.tasks)
             print(f"Task '{removed_task}' deleted.")
