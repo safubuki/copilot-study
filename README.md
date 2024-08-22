@@ -1,43 +1,32 @@
 # My Python Project
 
-This is a Python project that consists of several files and folders. Here's an overview of the project structure:
+これは、いくつかのファイルとフォルダで構成されるPythonプロジェクトです。プロジェクト構成の概要は以下の通りです：
 
 ```
 my-python-project
 ├── src
 │   ├── main.py
-│   ├── ui.py
 │   ├── task.py
 │   └── storage.py
 ├── tests
 │   ├── test_main.py
-│   ├── test_ui.py
 │   ├── test_task.py
 │   └── test_storage.py
 └── README.md
 ```
 
-## File Descriptions
+## ファイルの説明
 
-- `src/main.py`: This file serves as the main entry point of the program. It handles the program's initialization, execution, and termination.
+- src/main.py: このファイルはプログラムのメインエントリーポイントとして機能します。プログラムの初期化、実行、および終了を処理します。
 
-- `src/ui.py`: This file contains the user interface logic. It provides a command-line interface (CUI) with a selection menu for the user.
+- src/task.py: このファイルはタスクの追加、表示、および削除を処理します。
 
-- `src/task.py`: This file handles tasks, including adding, displaying, and deleting tasks.
+- src/storage.py: このファイルはタスクを外部ファイルに保存および読み込む役割を担います。
 
-- `src/storage.py`: This file is responsible for saving and loading tasks to/from an external file.
+- tests/test_main.py: このファイルには、main.pyファイルの単体テストが含まれています。
 
-- `tests/test_main.py`: This file contains unit tests for the `main.py` file.
+- tests/test_task.py: このファイルには、task.pyファイルの単体テストが含まれています。
 
-- `tests/test_ui.py`: This file contains unit tests for the `ui.py` file.
+- tests/test_storage.py: このファイルには、storage.pyファイルの単体テストが含まれています。
 
-- `tests/test_task.py`: This file contains unit tests for the `task.py` file.
-
-- `tests/test_storage.py`: This file contains unit tests for the `storage.py` file.
-
-Please note that the specific implementation details of each file are not provided, as they will depend on the requirements and design of your program.
-
-Feel free to modify and expand upon this project structure to suit your needs. Happy coding!
-```
-
-Please let me know if there's anything else I can help you with!
+このプロジェクト構成を自由に変更および拡張して、あなたのニーズに合わせてください。楽しいコーディングを！

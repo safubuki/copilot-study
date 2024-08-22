@@ -1,33 +1,29 @@
-class Task:
-    def __init__(self, description):
-        self.description = description
+from storage import TaskStorage
+
 
 class TaskManager:
-    def __init__(self):
-        self.tasks = []
 
-    def add_task(self, description):
-        task = Task(description)
+    def __init__(self, filename='tasks.json'):
+        self.storage = TaskStorage(filename)
+        self.tasks = self.storage.load_tasks()
+
+    def add_task(self, task):
         self.tasks.append(task)
+        self.storage.save_tasks(self.tasks)
+        print(f"Task '{task}' added.")
 
     def display_tasks(self):
-        if len(self.tasks) == 0:
-            print("No tasks found.")
+        if not self.tasks:
+            print("No tasks available.")
         else:
-            for i, task in enumerate(self.tasks, start=1):
-                print(f"{i}. {task.description}")
+            print("Tasks:")
+            for idx, task in enumerate(self.tasks, start=1):
+                print(f"{idx}. {task}")
 
-    def delete_task(self, index):
-        if index < 1 or index > len(self.tasks):
-            print("Invalid task index.")
+    def delete_task(self, task_number):
+        if task_number > 0 and task_number <= len(self.tasks):
+            removed_task = self.tasks.pop(task_number - 1)
+            self.storage.save_tasks(self.tasks)
+            print(f"Task '{removed_task}' deleted.")
         else:
-            del self.tasks[index - 1]
-            print("Task deleted.")
-
-# Example usage
-task_manager = TaskManager()
-task_manager.add_task("Task 1")
-task_manager.add_task("Task 2")
-task_manager.display_tasks()
-task_manager.delete_task(1)
-task_manager.display_tasks()
+            print("Invalid task number.")

@@ -1,39 +1,51 @@
-# main.py
+from task import TaskManager
+
 
 def main():
-    # Program initialization
+    task_manager = TaskManager()
     print("Welcome to the Task Manager!")
-    
-    # Program execution
+
     while True:
-        # Display menu options
-        print("Menu:")
+        print("** Menu:")
         print("1. Add a task")
         print("2. Display tasks")
         print("3. Delete a task")
         print("4. Exit")
-        
-        # Get user input
+
         choice = input("Enter your choice: ")
-        
-        # Process user input
+        print("-----")
+
         if choice == "1":
-            # Add a task
-            pass
+            print("** Add a task:")
+            task = input("Enter the task: ")
+            task_manager.add_task(task)
+            print("Task added successfully.")
+            print("-----")
         elif choice == "2":
-            # Display tasks
-            pass
+            print("** Display tasks:")
+            task_manager.display_tasks()
+            print("Tasks displayed successfully.")
+            print("-----")
         elif choice == "3":
-            # Delete a task
-            pass
+            print("** Delete task:")
+            try:
+                task_number = int(input("Enter the task number to delete: "))
+                task_manager.delete_task(task_number)
+                print("Task deleted successfully.")
+                print("-----")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+                print("-----")
         elif choice == "4":
-            # Exit the program
+            print("Exiting the Task Manager. Goodbye!")
+            print("-----")
             break
         else:
             print("Invalid choice. Please try again.")
-    
-    # Program termination
+            print("-----")
+
     print("Thank you for using the Task Manager!")
+
 
 if __name__ == "__main__":
     main()
