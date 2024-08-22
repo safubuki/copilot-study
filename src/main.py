@@ -1,7 +1,21 @@
+"""
+このファイルはタスクマネージャーのメインエントリーポイントを提供します。
+ユーザーにメニューを表示し、選択に応じてタスクを追加、表示、削除します。
+"""
 from task import TaskManager
 
 
 def main():
+    """
+    タスクマネージャーのメインエントリーポイント。
+    ユーザーにメニューを表示し、選択に応じてタスクを追加、表示、削除します。
+
+    Args:
+        なし
+
+    Returns:
+        なし
+    """
     task_manager = TaskManager()
     print("Welcome to the Task Manager!")
 
