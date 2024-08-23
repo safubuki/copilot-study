@@ -1,6 +1,8 @@
 """
 このファイルはタスクの追加、表示、削除を管理するTaskManagerクラスを提供します。
 """
+from typing import List
+
 from storage import TaskStorage
 
 
@@ -9,7 +11,7 @@ class TaskManager:
     タスクの追加、表示、削除を管理するクラス。
     """
 
-    def __init__(self, filename='tasks.json'):
+    def __init__(self, filename: str = 'tasks.json') -> None:
         """
         TaskManagerのコンストラクタ。タスクリストを初期化し、ストレージからタスクを読み込みます。
 
@@ -22,9 +24,9 @@ class TaskManager:
         # ストレージオブジェクトを初期化
         self.storage = TaskStorage(filename)
         # ストレージからタスクリストを読み込み
-        self.tasks = self.storage.load_tasks()
+        self.tasks: List[str] = self.storage.load_tasks()
 
-    def add_task(self, task):
+    def add_task(self, task: str) -> None:
         """
         タスクを追加します。
 
@@ -40,7 +42,7 @@ class TaskManager:
         self.storage.save_tasks(self.tasks)
         print(f"Task '{task}' added.")
 
-    def display_tasks(self):
+    def display_tasks(self) -> None:
         """
         現在のタスクリストを表示します。
 
@@ -59,7 +61,7 @@ class TaskManager:
             for idx, task in enumerate(self.tasks, start=1):
                 print(f"{idx}. {task}")
 
-    def delete_task(self, task_number):
+    def delete_task(self, task_number: int) -> None:
         """
         指定された番号のタスクを削除します。
 

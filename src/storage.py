@@ -2,6 +2,7 @@
 このファイルはタスクを外部ファイルに保存および読み込むためのTaskStorageクラスを提供します。
 """
 import json
+from typing import List
 
 
 class TaskStorage:
@@ -9,7 +10,7 @@ class TaskStorage:
     タスクを外部ファイルに保存および読み込むクラス。
     """
 
-    def __init__(self, filename='tasks.json'):
+    def __init__(self, filename: str = 'tasks.json') -> None:
         """
         TaskStorageのコンストラクタ。ファイル名を設定します。
 
@@ -21,7 +22,7 @@ class TaskStorage:
         """
         self.filename = filename
 
-    def save_tasks(self, tasks):
+    def save_tasks(self, tasks: List[str]) -> None:
         """
         タスクリストをファイルに保存します。
 
@@ -35,7 +36,7 @@ class TaskStorage:
         with open(self.filename, 'w', encoding='utf-8') as file:
             json.dump(tasks, file, ensure_ascii=False)
 
-    def load_tasks(self):
+    def load_tasks(self) -> List[str]:
         """
         ファイルからタスクリストを読み込みます。
 
