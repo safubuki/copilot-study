@@ -11,7 +11,7 @@ class TaskManager:
     タスクの追加、表示、削除を管理するクラス。
     """
 
-    def __init__(self, filename: str = 'tasks.json') -> None:
+    def __init__(self, filename: str = "tasks.json") -> None:
         """
         TaskManagerのコンストラクタ。タスクリストを初期化し、ストレージからタスクを読み込みます。
 
