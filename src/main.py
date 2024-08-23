@@ -36,13 +36,12 @@ def main():
             print("** タスクを追加:")
             task = input("タスクを入力してください: ")
             task_manager.add_task(task)
-            print("タスクが正常に追加されました。")
+            print("タスクを追加しました。")
             print("-----")
         elif choice == "2":
             # タスクを表示
             print("** タスクを表示:")
             task_manager.display_tasks()
-            print("タスクが正常に表示されました。")
             print("-----")
         elif choice == "3":
             # タスクを削除
@@ -54,7 +53,7 @@ def main():
             try:
                 task_number = int(input("削除するタスクの番号を入力してください: "))
                 task_manager.delete_task(task_number)
-                print("タスクが正常に削除されました。")
+                print("タスクを削除しました。")
                 print("-----")
             except ValueError:
                 # 無効な入力の場合のエラーメッセージ
