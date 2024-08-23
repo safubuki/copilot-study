@@ -17,57 +17,57 @@ def main():
         なし
     """
     task_manager = TaskManager()
-    print("Welcome to the Task Manager!")
+    print("タスクマネージャーへようこそ！")
 
     while True:
         # メニューを表示
-        print("** Menu:")
-        print("1. Add a task")
-        print("2. Display tasks")
-        print("3. Delete a task")
-        print("4. Exit")
+        print("** メニュー:")
+        print("1. タスクを追加")
+        print("2. タスクを表示")
+        print("3. タスクを削除")
+        print("4. 終了")
 
         # ユーザーの選択を取得
-        choice = input("Enter your choice: ")
+        choice = input("選択肢を入力してください: ")
         print("-----")
 
         if choice == "1":
             # タスクを追加
-            print("** Add a task:")
-            task = input("Enter the task: ")
+            print("** タスクを追加:")
+            task = input("タスクを入力してください: ")
             task_manager.add_task(task)
-            print("Task added successfully.")
+            print("タスクが正常に追加されました。")
             print("-----")
         elif choice == "2":
             # タスクを表示
-            print("** Display tasks:")
+            print("** タスクを表示:")
             task_manager.display_tasks()
-            print("Tasks displayed successfully.")
+            print("タスクが正常に表示されました。")
             print("-----")
         elif choice == "3":
             # タスクを削除
-            print("** Delete task:")
+            print("** タスクを削除:")
             try:
-                task_number = int(input("Enter the task number to delete: "))
+                task_number = int(input("削除するタスクの番号を入力してください: "))
                 task_manager.delete_task(task_number)
-                print("Task deleted successfully.")
+                print("タスクが正常に削除されました。")
                 print("-----")
             except ValueError:
                 # 無効な入力の場合のエラーメッセージ
-                print("Invalid input. Please enter a number.")
+                print("無効な入力です。番号を入力してください。")
                 print("-----")
         elif choice == "4":
             # プログラムを終了
-            print("Exiting the Task Manager. Goodbye!")
+            print("タスクマネージャーを終了します。")
             print("-----")
             break
         else:
             # 無効な選択肢
-            print("Invalid choice. Please try again.")
+            print("無効な選択肢です。もう一度お試しください。")
             print("-----")
 
     # 終了メッセージ
-    print("Thank you for using the Task Manager!")
+    print("タスクマネージャーのご利用ありがとうございます！")
 
 
 if __name__ == "__main__":
