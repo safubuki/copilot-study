@@ -31,6 +31,7 @@ class TaskStorage:
         Returns:
             なし
         """
+        # 指定されたファイルにタスクリストを保存
         with open(self.filename, 'w', encoding='utf-8') as file:
             json.dump(tasks, file, ensure_ascii=False)
 
@@ -45,8 +46,10 @@ class TaskStorage:
             list: 読み込んだタスクリスト。ファイルが存在しない場合は空のリストを返します。
         """
         try:
+            # 指定されたファイルからタスクリストを読み込み
             with open(self.filename, 'r', encoding='utf-8') as file:
                 tasks = json.load(file)
                 return tasks
         except FileNotFoundError:
+            # ファイルが存在しない場合は空のリストを返す
             return []

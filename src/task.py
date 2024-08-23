@@ -19,7 +19,9 @@ class TaskManager:
         Returns:
             なし
         """
+        # ストレージオブジェクトを初期化
         self.storage = TaskStorage(filename)
+        # ストレージからタスクリストを読み込み
         self.tasks = self.storage.load_tasks()
 
     def add_task(self, task):
@@ -32,7 +34,9 @@ class TaskManager:
         Returns:
             なし
         """
+        # タスクリストに新しいタスクを追加
         self.tasks.append(task)
+        # 更新されたタスクリストをストレージに保存
         self.storage.save_tasks(self.tasks)
         print(f"Task '{task}' added.")
 
@@ -46,9 +50,11 @@ class TaskManager:
         Returns:
             なし
         """
+        # タスクリストが空の場合の処理
         if not self.tasks:
             print("No tasks available.")
         else:
+            # タスクリストを表示
             print("Tasks:")
             for idx, task in enumerate(self.tasks, start=1):
                 print(f"{idx}. {task}")
@@ -63,8 +69,11 @@ class TaskManager:
         Returns:
             なし
         """
+        # 有効なタスク番号かどうかを確認
         if task_number > 0 and task_number <= len(self.tasks):
+            # 指定されたタスクを削除
             removed_task = self.tasks.pop(task_number - 1)
+            # 更新されたタスクリストをストレージに保存
             self.storage.save_tasks(self.tasks)
             print(f"Task '{removed_task}' deleted.")
         else:
