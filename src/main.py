@@ -47,6 +47,10 @@ def main():
         elif choice == "3":
             # タスクを削除
             print("** タスクを削除:")
+
+            # 現在のタスクリストを表示
+            task_manager.display_tasks()
+
             try:
                 task_number = int(input("削除するタスクの番号を入力してください: "))
                 task_manager.delete_task(task_number)
@@ -54,7 +58,7 @@ def main():
                 print("-----")
             except ValueError:
                 # 無効な入力の場合のエラーメッセージ
-                print("無効な入力です。番号を入力してください。")
+                print("無効な入力です。")
                 print("-----")
         elif choice == "4":
             # プログラムを終了

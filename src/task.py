@@ -79,4 +79,5 @@ class TaskManager:
             self.storage.save_tasks(self.tasks)
             print(f"Task '{removed_task}' deleted.")
         else:
-            print("Invalid task number.")
+            # 無効なタスク番号の場合にエラーを発生させる
+            raise ValueError("Invalid task number.")
