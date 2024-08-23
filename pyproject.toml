@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "copilot-study"
+version = "0.1.0"
+description = "for github copilot study project"
+authors = ["safubuki <safubuki.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpaths = ["."]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
