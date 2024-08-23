@@ -14,7 +14,7 @@ pytest-cov = "^5.0.0"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpaths = ["."]
+pythonpath = ["src"]
 
 [build-system]
 requires = ["poetry-core"]

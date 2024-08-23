@@ -1,6 +1,6 @@
 コード作成時に利用したGitHub Copilotのコマンドリスト
 
-● add-studycodeブランチで対応時に利用
+● add-studycodeブランチで対応時に利用した
 
 main.pyからtask.pyのTaskManagerクラスのメソッドをコールして、実際の処理を追加してください。task.pyのexampeusageは削除してください。
 task.pyからstorage.pyの関数をコールして、実際にjson形式で保存する処理を作成してください。
@@ -14,7 +14,7 @@ storage.pyの処理をクラス化してください。
 上記について、リンクは不要ですので削除してください。
 
 
-● modify-codeブランチで対応時に利用
+● modify-codeブランチで対応時に利用した
 
 #file:main.py Docstringを日本語で追加してください。Docstringには、Args:とReturn:を記載するようにしてください。また、引数や戻り値が無くても無しと記載してください。
 #file:task.py Docstringを日本語で追加してください。Docstringには、Args:とReturn:を記載するようにしてください。また、引数や戻り値が無くても無しと記載してください。
@@ -32,3 +32,9 @@ storage.pyの処理をクラス化してください。
 	※ main.pyのタスクを削除する処理を選択して
 #selection elseの場合valueErrorをraiseする
 	※ task.pyのdelete_taskメソッドを選択して
+
+● add-testブランチで対応時に利用した
+
+#file:main.py pytestテストケースをカバレッジを網羅する形で作成してください。必要に応じてmockを利用して生成してください。
+#file:test_main.py 各テスト関数にDocstringを日本語で追加して、テストケースの説明をしてください。
+#file:test_main.py 行頭にファイルの説明文を追加してください。
